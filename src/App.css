@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,700;1,400;1,700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
+body {
+  background: #141414;
+  font-size: 16px;
+  transition: background 1s;
+}
+
+
 .App {
   max-width: 100vw;
 }
 
 .App header.header {
+  position: fixed;
   width: 100%;
+  top: 15px;
   /* background: #fff; */
-  height: 75px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 2vw;
+  z-index: 999;
 }
 
 .App header.header ul {
@@ -25,14 +35,20 @@
   cursor: pointer;
 }
 
-.App header.header ul li:hover {
+.App header.header ul li a {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.App header.header ul li:hover > a {
   text-decoration: underline;
 }
 
 .App .homepage {
   display: flex;
   width: 75%;
-  margin: 25px auto;
+  margin: 45px auto;
   justify-content: center;
   height: 90vh;
 }
@@ -121,23 +137,27 @@
   margin: -5% 0 0 5%;
 }
 
-.concerts {
+.concerts, 
+.shows {
   width: 100%;
   max-width: 98vw;
   display: flex;
-  margin: 0 auto;
+  margin: 100px auto;
   flex-direction: column;
   align-items: center;
   height: 90vh;
   gap: 50px;
 }
 
-.concerts h1 {
-  color: #F729CA;
+.concerts h1,
+.shows h1 {
   font-family: 'PT Sans', Arial, Helvetica, sans-serif;
   font-size: 5rem;
   font-weight: 700;
+}
 
+.concerts h1 {
+  color: #F729CA;
 }
 
 .concerts ul.concertsCard {
@@ -219,6 +239,95 @@
   align-self: flex-end;
   padding-right: 35px;
   margin-top: 10px;
+}
+
+.shows {
+  margin-bottom: 200px;
+}
+
+.shows h1 {
+  color: #F7F429;
+  transition: color 0.5s;
+}
+
+.shows ul {
+  margin: 25px 0;
+  width: 75%;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 8%;
+  height: 550px;
+}
+
+
+.shows ul li {
+  height: 425px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+  width: 290px;
+  background: #F729CA;
+  transition: transform 0.5s;
+}
+
+.shows ul li:hover {
+  transform: translateY(-10px);
+}
+
+
+.shows ul li img {
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.shows ul li:nth-child(2) {
+  background: #F7F429;
+  flex-direction: column-reverse;
+}
+
+.shows ul li:nth-child(2) img {
+  transform: translateY(55px);
+}
+
+
+.shows ul li:nth-child(1) img,
+.shows ul li:nth-child(3) img {
+  transform: translateY(-55px);
+}
+
+.shows ul li .infoShow {
+  display: flex;
+  margin: 0 auto;
+  width: 88%;
+  height: 50px;
+  /* justify-content: space-around; */
+  align-items: center;
+  
+}
+
+.shows ul li .infoShow h3 {
+  font-family: 'Playfair Display';
+  /* width: 125px; */
+
+}
+
+.shows ul li .infoShow p {
+  width: 50%;
+  font-family: 'Arial';
+  font-size: 14px;
+  text-align: right;
+
+}
+
+.shows ul li:nth-child(1) .infoShow,
+.shows ul li:nth-child(3) .infoShow {
+  margin-top: -25px;
+}
+
+.shows ul li:nth-child(2) .infoShow {
+  padding-top: 25px;
 }
 
 
